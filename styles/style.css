@@ -1,0 +1,17 @@
+.foodList{
+    display: flex;
+       flex-direction: row;
+}
+
+.foodBox{
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    border: .25em solid blue;
+   margin: 2em;
+}
+
+#food-name{
+    font-size: 1.5em;
+}
+
