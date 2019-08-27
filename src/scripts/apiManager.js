@@ -2,6 +2,7 @@
 
 // food.forEach(oneFood =>  console.log(oneFood));
 
+// parse the food object
 
     fetch("http://localhost:8088/food")
     .then(response => response.json())
@@ -12,6 +13,8 @@
             fetch(`https://world.openfoodfacts.org/api/v0/product/${food.barcode}.json`)
                 .then(response => response.json())
                 .then(productInfo => {
+
+                  // add ingredients to product
                     if (productInfo.product.ingredients_text) {
                       food.ingredients = productInfo.product.ingredients_text
                     } else {
@@ -24,8 +27,7 @@
       food.country = "no country listed"
     }
  
-
-                    // Build HTML string for individual food
+                   // Build HTML string for individual food and send to DOM
                     document.querySelector(".foodList").innerHTML += `<div class = "foodBox">
                     <p class="foodItem" id="food-name">${food.name}</p>
                     <p class= "foodItem" id= "food-category">${food.category}</p>
@@ -34,8 +36,7 @@
                     <p class = "foodItem" id="food-country">${food.country}</p>
                     </div>`
 
-                    // Add HTML string to DOM
-                    
+                   
                 })
         })
     })

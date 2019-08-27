@@ -1,8 +1,10 @@
+/* make main container a flex box */
 .foodList{
     display: flex;
        flex-direction: row;
 }
 
+/* make div of foods a flex box and style */
 .foodBox{
     display: flex;
     flex-direction: column;
@@ -11,6 +13,7 @@
    margin: 2em;
 }
 
+/* change font on food title */
 #food-name{
     font-size: 1.5em;
 }
